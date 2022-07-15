@@ -12,3 +12,16 @@
 
 # Current state
 Buggy, incomplete and should not be use in production
+
+# Compiling
+## Windows
+Requires [Visual Studio 2019 Community](https://visualstudio.microsoft.com/downloads/).  
+When installing, go to the individual components and install such:
+1. `C++ MFC for latest v142 build tools (x86 & x64)`
+2. Optionally `C++ MFC for latest v142 build tools (x86 & x64)`
+3. Latest Windows SDK, which should be installed by default
+
+Enter the cool-source directory, after you've cloned it, and run the script `createallprojects.bat`. This should generate the `everything` solution. Open it with Visual Studio, select at the top to be Release (or optionally select Debug) and build it.  
+
+## Linux
+To be added
