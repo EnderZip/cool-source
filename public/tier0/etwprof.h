@@ -15,7 +15,7 @@
 //    wevtutil im src\tier0\ValveETWProvider.man
 //
 //===============================================================================
-
+#if defined(ETWPROF)
 #ifndef ETWPROF_H
 #define ETWPROF_H
 #if defined( COMPILER_MSVC )
@@ -155,3 +155,4 @@ private:
 #endif
 
 #endif // ETWPROF_H
+#endif

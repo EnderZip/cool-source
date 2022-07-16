@@ -3190,7 +3190,7 @@ void _Host_RunFrame (float time)
 			for ( int tick = 0; tick < numticks; tick++ )
 			{ 
 				// Emit an ETW event every simulation frame.
-				ETWSimFrameMark( sv.IsDedicated() );
+				//ETWSimFrameMark( sv.IsDedicated() );
 
 				double now = Plat_FloatTime();
 				float jitter = now - host_idealtime;

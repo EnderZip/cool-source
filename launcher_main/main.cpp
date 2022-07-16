@@ -122,6 +122,9 @@ int APIENTRY WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
 	HINSTANCE launcher = LoadLibrary( szBuffer );
 #else
 	HINSTANCE launcher = LoadLibraryEx( szBuffer, NULL, LOAD_WITH_ALTERED_SEARCH_PATH );
+	int stupiderr = GetLastError();
+	printf("%i\n", stupiderr);
+	//HINSTANCE launcher = LoadLibrary(szBuffer);
 #endif
 	if ( !launcher )
 	{

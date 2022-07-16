@@ -340,7 +340,7 @@ void CHostState::GameShutdown()
 // The external API queues up state changes to happen when the state machine is processed.
 void CHostState::State_NewGame()
 {
-	CETWScope timer( "CHostState::State_NewGame" );
+	//CETWScope timer( "CHostState::State_NewGame" );
 
 	if ( Host_ValidGame() )
 	{

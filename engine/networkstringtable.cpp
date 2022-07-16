@@ -602,7 +602,7 @@ int CNetworkStringTable::WriteUpdate( CBaseClient *client, bf_write &buf, int ti
 		}
 	}
 
-	ETWMark2I( GetTableName(), entriesUpdated, buf.GetNumBitsWritten() - nTableStartBit );
+	//ETWMark2I( GetTableName(), entriesUpdated, buf.GetNumBitsWritten() - nTableStartBit );
 
 	return entriesUpdated;
 }

@@ -1101,7 +1101,7 @@ void CBaseClient::EndTrace( bf_write &msg )
 		COM_LogString( SERVER_PACKETS_LOG, logData.String() );
 	if ( sv_netspike_output.GetInt() & 2 )
 		Log( "%s", logData.String() );
-	ETWMark1S( "netspike", logData.String() );
+	//ETWMark1S( "netspike", logData.String() );
 	m_Trace.m_Records.RemoveAll();
 	m_iTracing = 0;
 }
@@ -1366,7 +1366,7 @@ bool CBaseClient::ShouldSendMessages( void )
 		// tell netchannel that we are choking a packet
 		m_NetChannel->SetChoked();	
 		// Record an ETW event to indicate that we are throttling.
-		ETWThrottled();
+		//ETWThrottled();
 		bSendMessage = false;
 	}
 

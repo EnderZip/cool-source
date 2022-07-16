@@ -2339,7 +2339,7 @@ int NET_SendLong( INetChannel *chan, int sock, SOCKET s, const char FAR * buf, i
 int NET_SendPacket ( INetChannel *chan, int sock,  const netadr_t &to, const unsigned char *data, int length, bf_write *pVoicePayload /* = NULL */, bool bUseCompression /*=false*/ )
 {
 	VPROF_BUDGET( "NET_SendPacket", VPROF_BUDGETGROUP_OTHER_NETWORKING );
-	ETWSendPacket( to.ToString() , length , 0 , 0 );
+	//ETWSendPacket( to.ToString() , length , 0 , 0 );
 
 	int		ret;
 	struct sockaddr	addr;

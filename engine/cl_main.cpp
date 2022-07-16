@@ -1030,7 +1030,7 @@ void CL_RegisterResources( void )
 
 void CL_FullyConnected( void )
 {
-	CETWScope timer( "CL_FullyConnected" );
+	//CETWScope timer( "CL_FullyConnected" );
 
 	EngineVGui()->UpdateProgressBar( PROGRESS_FULLYCONNECTED );
 

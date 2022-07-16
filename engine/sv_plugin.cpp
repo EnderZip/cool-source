@@ -389,7 +389,7 @@ void CServerPlugin::LevelInit(	char const *pMapName,
 								char const *pMapEntities, char const *pOldLevel, 
 								char const *pLandmarkName, bool loadGame, bool background )
 {
-	CETWScope timer( "CServerPlugin::LevelInit" );
+	//CETWScope timer( "CServerPlugin::LevelInit" );
 
 	MDLCACHE_COARSE_LOCK_(g_pMDLCache);
 	FORALL_PLUGINS

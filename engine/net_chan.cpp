@@ -2399,7 +2399,7 @@ int CNetChan::ProcessPacketHeader( netpacket_t * packet )
 
 	m_nInSequenceNr = sequence;
 	m_nOutSequenceNrAck = sequence_ack;
-	ETWReadPacket( packet->from.ToString(), packet->wiresize, m_nInSequenceNr, m_nOutSequenceNr );
+	//ETWReadPacket( packet->from.ToString(), packet->wiresize, m_nInSequenceNr, m_nOutSequenceNr );
 
 // Update waiting list status
 	

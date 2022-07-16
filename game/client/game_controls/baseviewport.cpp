@@ -673,7 +673,7 @@ void CBaseViewport::FireGameEvent( IGameEvent * event)
 //-----------------------------------------------------------------------------
 void CBaseViewport::ReloadScheme(const char *fromFile)
 {
-	CETWScope timer( "CBaseViewport::ReloadScheme" );
+	//CETWScope timer( "CBaseViewport::ReloadScheme" );
 
 	// See if scheme should change
 	

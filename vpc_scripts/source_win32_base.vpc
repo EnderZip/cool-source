@@ -12,7 +12,7 @@ $Configuration
 		//$PlatformToolset "v110_xp" [$VS2012 && !$ANALYZE] // VS 2012 targeting Windows XP - //http://msdn.microsoft.com/en-us/library/vstudio/jj851139.aspx
 		//$PlatformToolset "v110" [$VS2012 && $ANALYZE] // VS 2012 for /analyze
 		//$PlatformToolset "v120_xp" [$VS2013 && !$ANALYZE] // VS 2013 targeting Windows XP - //http://msdn.microsoft.com/en-us/library/vstudio/jj851139.aspx
-		$PlatformToolset "v142" // VS 2019
+		$PlatformToolset "v143" // VS 2019
 	}
 
 	$General

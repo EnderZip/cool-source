@@ -93,7 +93,7 @@ unsigned char *CLZSS::CompressNoAlloc( const unsigned char *pInput, int inputLen
 		return NULL;
 	}
 	VPROF( "CLZSS::CompressNoAlloc" );
-	ETWMark1I("CompressNoAlloc", inputLength );
+	//ETWMark1I("CompressNoAlloc", inputLength );
 
 	// create the compression work buffers, small enough (~64K) for stack
 	m_pHashTable = (lzss_list_t *)stackalloc( 256 * sizeof( lzss_list_t ) );

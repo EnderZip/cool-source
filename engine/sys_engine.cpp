@@ -414,7 +414,7 @@ void CEngine::Frame( void )
 	if ( !sv.IsDedicated() )
 	{
 		ClientDLL_FrameStageNotify( FRAME_START );
-		ETWRenderFrameMark( false );
+		//ETWRenderFrameMark( false );
 	}
 #endif
 

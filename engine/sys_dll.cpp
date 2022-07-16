@@ -872,7 +872,7 @@ SpewRetval_t Sys_SpewFunc( SpewType_t spewType, const char *pMsg )
 	// understand why, and save us time when server operators are triggering
 	// excessive spew. Having the output in traces is also generically useful
 	// for understanding slowdowns.
-	ETWMark1I( pMsg, spewType );
+	//ETWMark1I( pMsg, spewType );
 
 	if ( !suppress )
 	{

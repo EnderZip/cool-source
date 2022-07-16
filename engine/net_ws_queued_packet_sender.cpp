@@ -223,7 +223,7 @@ int CQueuedPacketSender::Run()
 					waitInterval = pPacket->m_unSendTime - msNow;
 					// Emit ETW events to help with diagnosing network throttling issues as
 					// these often have a severe effect on load times in Dota.
-					ETWMark1I( "CQueuedPacketSender::Run sleeping (ms)", waitInterval );
+					//ETWMark1I( "CQueuedPacketSender::Run sleeping (ms)", waitInterval );
 					if ( bTrace )
 					{
 						Warning( "SQ:  sleeping for %u msecs at %f\n", waitInterval, Plat_FloatTime() );

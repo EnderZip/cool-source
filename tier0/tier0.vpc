@@ -251,17 +251,6 @@ $Project "tier0"
 	
 	$Folder "Manifest Files" [$WINDOWS]
 	{
-		$File	"ValveETWProvider.man"
-		{
-			$Configuration
-			{
-				$CustomBuildStep
-				{
-					$CommandLine	"..\DevTools\bin\mc.exe -um $(InputFilename) -z $(InputName)Events"
-					$Description	"Compiling ETW manifest file"
-					$Outputs		"$(InputName)Events.h;$(InputName)Events.rc"
-				}
-			}
-		}
+		
 	}
 }

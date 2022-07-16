@@ -5,6 +5,8 @@
 // $NoKeywords: $
 //=============================================================================//
 
+#if defined(FILESYSTEM_STEAM_SUPPORT)
+
 #include "basefilesystem.h"
 #include "steamcommon.h"
 #include "SteamInterface.h"
@@ -1534,3 +1536,4 @@ int CFileSystem_Steam::HintResourceNeed( const char *hintlist, int forgetEveryth
 }
 
 
+#endif

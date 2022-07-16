@@ -908,7 +908,7 @@ void COM_TimestampedLog( char const *fmt, ... )
 		// If ETW profiling is enabled then do it only.
 		if ( s_bShouldLogToETW )
 		{
-			ETWMark( string );
+			//ETWMark( string );
 		}
 		else
 		{

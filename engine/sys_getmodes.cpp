@@ -836,7 +836,7 @@ void CVideoMode_Common::DrawStartupVideo()
     if ( IsX360() )
         return;
 
-	CETWScope timer( "CVideoMode_Common::DrawStartupGraphic" );
+	//CETWScope timer( "CVideoMode_Common::DrawStartupGraphic" );
 
     // render an avi, if we have one
 	if ( !m_bPlayedStartupVideo && !InEditMode() && !ShouldForceVRActive() )

@@ -2097,11 +2097,11 @@ int CModAppSystemGroup::Main()
 
 		// Start up the game engine
 		static const char engineLoadMessage[] = "Calling CEngine::Load";
-		int64 nStartTime = ETWBegin( engineLoadMessage );
+		//int64 nStartTime = ETWBegin( engineLoadMessage );
 		if ( eng->Load( false, host_parms.basedir ) )					
 		{
 #if !defined(SWDS)
-			ETWEnd( engineLoadMessage, nStartTime );
+			//ETWEnd( engineLoadMessage, nStartTime );
 			toolframework->ServerInit( g_ServerFactory );
 
 			if ( s_EngineAPI.MainLoop() )

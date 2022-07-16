@@ -369,7 +369,7 @@ static void Cbuf_ExecuteCommand( const CCommand &args, cmd_source_t source )
 	// Note: If you remove this, PerfMark needs to do the same logic--so don't do that.
 	tmMessage( TELEMETRY_LEVEL0, TMMF_SEVERITY_LOG | TMMF_ICON_NOTE, "(source/command) %s", tmDynamicString( TELEMETRY_LEVEL0, args.GetCommandString() ) );
 	// Add the command text to the ETW stream to give better context to traces.
-	ETWMark( args.GetCommandString() );
+	//ETWMark( args.GetCommandString() );
 
 	// execute the command line
 	const ConCommandBase *pCmd = Cmd_ExecuteCommand( args, source );
