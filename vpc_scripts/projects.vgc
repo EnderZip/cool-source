@@ -27,6 +27,11 @@ $Project "client"
 	"game\client\client_sdk.vpc"		[($WIN32||$WIN64||$POSIX) && $SDK]
 }
 
+$Project "inputsystem" 
+{
+	"inputsystem\inputsystem.vpc"	
+}
+
 $Project "datamodel"
 {
 	"datamodel\datamodel.vpc"	

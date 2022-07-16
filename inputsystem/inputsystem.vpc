@@ -49,7 +49,6 @@ $Project "inputsystem"
 	{
 		$Lib	tier1
 		$Lib	tier2
-		$Lib    imgui
 		$ImpLib SDL2
 		$Implib	"steam_api"						[($WIN32||$WIN64||$POSIX||$PS3)&&!$NO_STEAM]
 	}

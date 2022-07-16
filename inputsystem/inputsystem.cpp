@@ -172,7 +172,7 @@ InitReturnVal_t CInputSystem::Init()
 	joy_xcontroller_found.SetValue( 0 );
 	if ( IsPC() && !m_bConsoleTextMode )
 	{
-		InitializeJoysticks();
+		//InitializeJoysticks();
 		if ( m_bXController )
 			joy_xcontroller_found.SetValue( 1 );
 
@@ -251,7 +251,7 @@ void CInputSystem::Shutdown()
 	
 	if ( IsPC() )
 	{
-		ShutdownJoysticks();
+		//ShutdownJoysticks();
 	}
 
 	BaseClass::Shutdown();
@@ -941,7 +941,7 @@ void CInputSystem::SampleDevices( void )
 {
 	m_nLastSampleTick = ComputeSampleTick();
 
-	PollJoystick();
+	//PollJoystick();
 
 #if defined( PLATFORM_WINDOWS_PC )
 	// NVNT if we have device/s poll them.
@@ -978,7 +978,7 @@ void CInputSystem::SetPrimaryUserId( int userId )
 //-----------------------------------------------------------------------------
 void CInputSystem::SetRumble( float fLeftMotor, float fRightMotor, int userId )
 {
-	SetXDeviceRumble( fLeftMotor, fRightMotor, userId );
+	//SetXDeviceRumble( fLeftMotor, fRightMotor, userId );
 }
 
 
@@ -1264,15 +1264,15 @@ void CInputSystem::UpdateMousePositionState( InputState_t &state, short x, short
 	}
 }
 
-extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+//extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 //-----------------------------------------------------------------------------
 // Handles input messages
 //-----------------------------------------------------------------------------
 LRESULT CInputSystem::WindowProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 {
-	if (ImGui_ImplWin32_WndProcHandler(hwnd, uMsg, wParam, lParam))
-		return true;
+	//if (ImGui_ImplWin32_WndProcHandler(hwnd, uMsg, wParam, lParam))
+	//	return true;
 
 #if defined( PLATFORM_WINDOWS ) // We use this even for SDL to handle mouse move.
 	if ( !m_bEnabled )
@@ -1300,7 +1300,7 @@ LRESULT CInputSystem::WindowProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 	case WM_LBUTTONDOWN:
 		{
 			int nButtonMask = ButtonMaskFromMouseWParam( wParam, MOUSE_LEFT, true );
-			ETWMouseDown( 0, (short)LOWORD(lParam), (short)HIWORD(lParam) );
+			//ETWMouseDown( 0, (short)LOWORD(lParam), (short)HIWORD(lParam) );
 			UpdateMouseButtonState( nButtonMask );
 		}
 		break;
@@ -1308,7 +1308,7 @@ LRESULT CInputSystem::WindowProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 	case WM_LBUTTONUP:
 		{
 			int nButtonMask = ButtonMaskFromMouseWParam( wParam, MOUSE_LEFT, false );
-			ETWMouseUp( 0, (short)LOWORD(lParam), (short)HIWORD(lParam) );
+			//ETWMouseUp( 0, (short)LOWORD(lParam), (short)HIWORD(lParam) );
 			UpdateMouseButtonState( nButtonMask );
 		}
 		break;
@@ -1316,7 +1316,7 @@ LRESULT CInputSystem::WindowProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 	case WM_RBUTTONDOWN:
 		{
 			int nButtonMask = ButtonMaskFromMouseWParam( wParam, MOUSE_RIGHT, true );
-			ETWMouseDown( 2, (short)LOWORD(lParam), (short)HIWORD(lParam) );
+			//ETWMouseDown( 2, (short)LOWORD(lParam), (short)HIWORD(lParam) );
 			UpdateMouseButtonState( nButtonMask );
 		}
 		break;
@@ -1324,7 +1324,7 @@ LRESULT CInputSystem::WindowProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 	case WM_RBUTTONUP:
 		{
 			int nButtonMask = ButtonMaskFromMouseWParam( wParam, MOUSE_RIGHT, false );
-			ETWMouseUp( 2, (short)LOWORD(lParam), (short)HIWORD(lParam) );
+			//ETWMouseUp( 2, (short)LOWORD(lParam), (short)HIWORD(lParam) );
 			UpdateMouseButtonState( nButtonMask );
 		}
 		break;
@@ -1332,7 +1332,7 @@ LRESULT CInputSystem::WindowProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 	case WM_MBUTTONDOWN:
 		{
 			int nButtonMask = ButtonMaskFromMouseWParam( wParam, MOUSE_MIDDLE, true );
-			ETWMouseDown( 1, (short)LOWORD(lParam), (short)HIWORD(lParam) );
+			//ETWMouseDown( 1, (short)LOWORD(lParam), (short)HIWORD(lParam) );
 			UpdateMouseButtonState( nButtonMask );
 		}
 		break;
@@ -1340,7 +1340,7 @@ LRESULT CInputSystem::WindowProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 	case WM_MBUTTONUP:
 		{
 			int nButtonMask = ButtonMaskFromMouseWParam( wParam, MOUSE_MIDDLE, false );
-			ETWMouseUp( 1, (short)LOWORD(lParam), (short)HIWORD(lParam) );
+			//ETWMouseUp( 1, (short)LOWORD(lParam), (short)HIWORD(lParam) );
 			UpdateMouseButtonState( nButtonMask );
 		}
 		break;
@@ -1370,7 +1370,7 @@ LRESULT CInputSystem::WindowProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 	case WM_LBUTTONDBLCLK:
 		{
 			int nButtonMask = ButtonMaskFromMouseWParam( wParam, MOUSE_LEFT, true );
-			ETWMouseDown( 0, (short)LOWORD(lParam), (short)HIWORD(lParam) );
+			//ETWMouseDown( 0, (short)LOWORD(lParam), (short)HIWORD(lParam) );
 			UpdateMouseButtonState( nButtonMask, MOUSE_LEFT );
 		}
 		break;
@@ -1378,7 +1378,7 @@ LRESULT CInputSystem::WindowProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 	case WM_RBUTTONDBLCLK:
 		{
 			int nButtonMask = ButtonMaskFromMouseWParam( wParam, MOUSE_RIGHT, true );
-			ETWMouseDown( 2, (short)LOWORD(lParam), (short)HIWORD(lParam) );
+			//ETWMouseDown( 2, (short)LOWORD(lParam), (short)HIWORD(lParam) );
 			UpdateMouseButtonState( nButtonMask, MOUSE_RIGHT );
 		}
 		break;
@@ -1386,7 +1386,7 @@ LRESULT CInputSystem::WindowProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 	case WM_MBUTTONDBLCLK:
 		{
 			int nButtonMask = ButtonMaskFromMouseWParam( wParam, MOUSE_MIDDLE, true );
-			ETWMouseDown( 1, (short)LOWORD(lParam), (short)HIWORD(lParam) );
+			//ETWMouseDown( 1, (short)LOWORD(lParam), (short)HIWORD(lParam) );
 			UpdateMouseButtonState( nButtonMask, MOUSE_MIDDLE );
 		}
 		break;
@@ -1418,7 +1418,7 @@ LRESULT CInputSystem::WindowProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 
 				// Post ETW events describing key presses to help correlate input events to performance
 				// problems in the game.
-				ETWKeyDown( scanCode, virtualCode, ButtonCodeToString( virtualCode ) );
+				//ETWKeyDown( scanCode, virtualCode, ButtonCodeToString( virtualCode ) );
 
 				// Deal with toggles
 				if ( scanCode == KEY_CAPSLOCK || scanCode == KEY_SCROLLLOCK || scanCode == KEY_NUMLOCK )
@@ -1542,7 +1542,7 @@ void CInputSystem::SetConsoleTextMode( bool bConsoleTextMode )
 	/* If someone calls this after init, shut it down. */
 	if ( bConsoleTextMode && m_bJoystickInitialized )
 	{
-		ShutdownJoysticks();
+		//ShutdownJoysticks();
 	}
 
 	m_bConsoleTextMode = bConsoleTextMode;

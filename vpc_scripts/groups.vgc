@@ -62,6 +62,9 @@ $Group "shaders"
 
 $Group "everything"
 {
+	"vphysics"
+	"inputsystem"
+	"datacache"
 	"vstdlib"
 	"tier0"
 	"tier2"

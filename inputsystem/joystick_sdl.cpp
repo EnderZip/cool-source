@@ -3,7 +3,7 @@
 // Purpose: Linux Joystick implementation for inputsystem.dll
 //
 //===========================================================================//
-
+#if defined(JOYSTICK)
 /* For force feedback testing. */
 #include "inputsystem.h"
 #include "tier1/convar.h"
@@ -613,3 +613,4 @@ AnalogCode_t ControllerAxisToAnalogCode( SDL_GameControllerAxis axis )
 
 	return ANALOG_CODE_INVALID;
 }
+#endif
